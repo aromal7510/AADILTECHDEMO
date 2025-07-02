@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>AadilTech - IT Solutions & Services</title>
+  <meta name="description" content="AadilTech provides custom software development, web solutions, and digital services for businesses globally">
+  <meta name="keywords" content="software development, web design, mobile apps, digital solutions, IT services">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Custom Styles */
+    :root {
+      --primary-color: #00c1c4;
+      --secondary-color: #f0f8f9;
+      --dark-color: #333;
+      --light-color: #f8f9fa;
+    }
+    
+    .hero h2 span {
+      color: var(--primary-color);
+    }
+    
+    .about-section h2, 
+    .clients-section h2 {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+    
+    .about-section {
+      background-color: var(--secondary-color);
+    }
+    
+    .clients-section {
+      background-color: var(--light-color);
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    
+    /* Clients Carousel */
+   .client-logo-container {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 193, 196, 0.15);
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid rgba(0, 193, 196, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.client-logo-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 193, 196, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.client-logo-container:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 193, 196, 0.2);
+  border-color: rgba(0, 193, 196, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f8f9 100%);
+}
+
+.client-logo-container:hover::before {
+  opacity: 1;
+}
+
+.client-logo-container img {
+  max-height: 80px;
+  width: auto;
+  max-width: 100%;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  opacity: 0.9;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: scale(0.95);
+}
+
+.client-logo-container:hover img {
+  filter: drop-shadow(0 4px 8px rgba(0, 193, 196, 0.3));
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Colorful border animation on hover */
+.client-logo-container::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 14px;
+  background: linear-gradient(45deg, 
+    #00c1c4 0%, 
+    #4dccbd 25%, 
+    #8fd8d6 50%, 
+    #4dccbd 75%, 
+    #00c1c4 100%);
+  background-size: 200% 200%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.client-logo-container:hover::after {
+  opacity: 0.8;
+  animation: gradientBorder 3s linear infinite;
+}
+
+  .icon-box {
+  width: 48px;
+  height: 48px;
+  background-color: #e9f7fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Content Styling */
+.content-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lead-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a5568;
+  margin-bottom: 0;
+}
+
+/* Media Cards */
+.media-card {
+  position: relative;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.media-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image Styling */
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-wrapper img {
+  transition: transform 0.5s ease;
+  width: 100%;
+  display: block;
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.zoom-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+.image-wrapper:hover .hover-overlay,
+.image-wrapper:hover .zoom-icon {
+  opacity: 1;
+}
+
+/* Video Styling */
+.video-wrapper {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper video {
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.video-wrapper:hover .play-button {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Captions */
+.media-caption {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+  .sitename {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .sitename .part1 {
+    color: #000000; /* Black */
+  }
+
+  .sitename .part2 {
+    color: #00c1c4; /* Turquoise from logo */
+  }
+
+@keyframes gradientBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .client-logo-container {
+    height: 110px;
+    padding: 15px;
+  }
+  
+  .client-logo-container img {
+    max-height: 60px;
+  }
+  
+  .client-logo-container:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+}
+
+@media (max-width: 576px) {
+  .client-logo-container {
+    height: 90px;
+    padding: 12px;
+  }
+  
+  .client-logo-container img {
+    max-height: 50px;
+  }
+
+
+
+}
+
+
+  </style>
+
+  
+</head>
+
+<body class="index-page">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/logo.png" width="30%" alt="AadilTech Logo">
+    <h1 class="sitename">
+<img src="cropped-logo-removebg-preview.png" alt="AADILTECH Logo" style="height: 40px; width: auto;">
+
+</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#career">Career</a></li>
+          <li class="dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Team</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="cta-btn" href="#contact">Get Started</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main class="main">
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/hero-bg.jpg" alt="Hero Background" data-aos="fade-in">
+
+      <div class="container d-flex flex-column align-items-center text-center">
+<h2 data-aos="fade-up" data-aos-delay="100" style="display: flex; align-items: center; gap: 10px;">
+  Welcome to <span>AADILTECH</span>
+</h2>
+
+
+
+  
+
+
+        <p data-aos="fade-up" data-aos-delay="200">Innovative IT solutions for your business growth</p>
+        <div data-aos="fade-up" data-aos-delay="300">
+          <a href="https://youtu.be/fpIRPIkiQuQ?si=gowirvMNmS5KYSI0" class="glightbox pulsating-play-btn"></a>
+        </div>
+      </div>
+    </section><!-- End Hero -->
+
+    <!-- ======= About Section ======= -->
+<section id="about" class="about-section section py-5">
+  <div class="container" data-aos="fade-up">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">About AadilTech Solution</h2>
+      <p class="lead text-muted">
+        Empowering education and businesses with custom software solutions, bulk messaging services, and innovative digital tools — trusted globally.
+      </p>
+    </div>
+
+    <!-- Main Row -->
+    <div class="row gy-5 align-items-center">
+
+      <!-- Left Column: Features -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="150">
+        <div class="d-flex mb-4">
+          <div class="icon-box text-primary fs-3">
+            <i class="bi bi-cpu-fill"></i>
+          </div>
+          <div class="ms-3">
+            <h5 class="fw-semibold">Custom Software Development</h5>
+            <p class="text-muted mb-0">Scalable, efficient solutions for universities and enterprises across the globe.</p>
+          </div>
+        </div>
+
+        <div class="d-flex mb-4">
+          <div class="icon-box text-primary fs-3">
+            <i class="bi bi-envelope-paper-fill"></i>
+          </div>
+          <div class="ms-3">
+            <h5 class="fw-semibold">Bulk Email & SMS Services</h5>
+            <p class="text-muted mb-0">High-delivery messaging solutions to connect, promote, and grow your audience.</p>
+          </div>
+        </div>
+
+        <div class="d-flex mb-4">
+          <div class="icon-box text-primary fs-3">
+            <i class="bi bi-award-fill"></i>
+          </div>
+          <div class="ms-3">
+            <h5 class="fw-semibold">Trusted Global Presence</h5>
+            <p class="text-muted mb-0">Expanding through India, Europe, and the Middle East with loyal partnerships.</p>
+          </div>
+        </div>
+
+        <div class="d-flex mb-4">
+          <div class="icon-box text-primary fs-3">
+            <i class="bi bi-shield-lock-fill"></i>
+          </div>
+          <div class="ms-3">
+            <h5 class="fw-semibold">Secure & Reliable</h5>
+            <p class="text-muted mb-0">Delivering with minimal risk and maximum reliability across all platforms.</p>
+          </div>
+        </div>
+      </div>
+
+    <!-- Right Column: Media -->
+<div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+  <!-- Text Content -->
+  <div class="content-card mb-4">
+    <p class="lead-text">
+      Growth with innovation is what drives AadilTech Solutions. Our journey is marked by cutting-edge product delivery and trusted global collaborations, particularly in education and enterprise sectors.
+    </p>
+  </div>
+
+  <div class="row g-4">
+    <!-- Image -->
+    <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
+      <div class="media-card">
+        <div class="image-wrapper">
+          <img src="WhatsApp-Image-2023-11-02-at-08.22.51-768x370.jpeg" alt="AadilTech Office" class="img-fluid rounded-3">
+          <div class="hover-overlay"></div>
+          <div class="zoom-icon">
+            <i class="bi bi-zoom-in"></i>
+          </div>
+        </div>
+        <p class="media-caption">Our team at work</p>
+      </div>
+    </div>
+
+    <!-- Video -->
+    <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
+      <div class="media-card">
+        <div class="video-wrapper rounded-3">
+          <video controls poster="assets/img/video-thumbnail.jpg" class="w-100">
+            <source src="https://aadiltech.com/wp-content/uploads/2024/07/VID-20240712-WA0052_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="play-button">
+            <i class="bi bi-play-circle"></i>
+          </div>
+        </div>
+        <p class="media-caption">Company overview</p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-5" data-aos="zoom-in" data-aos-delay="300">
+      <a href="#contact" class="btn btn-primary btn-lg shadow">
+        Get Started with Us <i class="bi bi-arrow-right ms-2"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Discover our range of digital solutions designed to accelerate your business and technology goals.</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Software Development</h3>
+              </a>
+              <p>Designing, building, and maintaining robust and scalable software systems for web and desktop platforms.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-laptop"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Web Design and Development</h3>
+              </a>
+              <p>Creating visually appealing and fully functional websites that are responsive, user-friendly, and optimized.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-phone"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Mobile Application</h3>
+              </a>
+              <p>Developing Android and iOS applications with smooth interfaces and performance-driven user experiences.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-share-fill"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Social Media Services</h3>
+              </a>
+              <p>Boosting your online presence through content creation, engagement, advertising, and strategic marketing.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-brush"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Graphic Design</h3>
+              </a>
+              <p>Crafting visual identities with stunning graphics for branding, advertising, and social media platforms.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Bulk Message and Email Services</h3>
+              </a>
+              <p>Reaching thousands instantly through reliable SMS and email campaigns, powered by trusted delivery platforms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+      <img src="assets/img/cta-bg.jpg" alt="Call to Action Background">
+
+      <div class="container">
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-9 text-center text-xl-start">
+            <h3>Call To Action</h3>
+            <p>Empower Your Business with Smart Solutions. From custom software development to reliable bulk email and SMS services, we help you connect, automate, and grow.</p>
+          </div>
+          <div class="col-xl-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#contact">Call To Action</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Call To Action Section -->
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients-section section">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>Our Esteemed Clients</h2>
+          <p class="text-muted">Trusted by leading brands across multiple industries</p>
+        </div>
+
+        <div class="client-carousel owl-carousel owl-theme">
+          <div class="client-item">
+            <div class="client-logo-container">
+              <img src="https://aadiltech.com/wp-content/uploads/2020/05/c16.jpg" alt="Client Logo" class="img-fluid">
+            </div>
+          </div>
+          <div class="client-item">
+            <div class="client-logo-container">
+              <img src="https://aadiltech.com/wp-content/uploads/2020/05/cliajaz.jpg" alt="Al Jazira Clinic" class="img-fluid">
+            </div>
+          </div>
+          <div class="client-item">
+            <div class="client-logo-container">
+              <img src="https://aadiltech.com/wp-content/uploads/2020/05/alotasihn.jpg" alt="Al-Otashan Group" class="img-fluid">
+            </div>
+          </div>
+          <div class="client-item">
+            <div class="client-logo-container">
+              <img src="https://aadiltech.com/wp-content/uploads/2020/05/clialmo.jpg" alt="Client Logo" class="img-fluid">
+            </div>
+          </div>
+          <div class="client-item">
+            <div class="client-logo-container">
+              <img src="https://aadiltech.com/wp-content/uploads/2020/05/clialsharq.jpg" alt="Client Logo" class="img-fluid">
+            </div>
+          </div>
+          <div class="client-item">
+            <div class="client-logo-container">
+              <img src="https://aadiltech.com/wp-content/uploads/2020/05/cliammar.jpg" alt="Client Logo" class="img-fluid">
+            </div>
+          </div>
+          <div class="client-item">
+            <div class="client-logo-container">
+              <img src="https://aadiltech.com/wp-content/uploads/2020/05/cliastic.jpg" alt="Client Logo" class="img-fluid">
+            </div>
+          </div>
+          <div class="client-item">
+            <div class="client-logo-container">
+              <img src="https://aadiltech.com/wp-content/uploads/2020/05/clicaltech.jpg" alt="Calltech Arabia" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Clients Section -->
+
+    <!-- ======= Stats Section ======= -->
+    <section id="stats" class="stats section dark-background">
+      <img src="assets/img/stats-bg.jpg" alt="Stats Background" data-aos="fade-in">
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="subheading">
+          <h3>What we have achieved so far</h3>
+          <p>Our journey in numbers showcasing our growth and impact</p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Clients</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Projects</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hours Of Support</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Workers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Stats Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Get in touch with our team for inquiries and collaborations</p>
+      </div>
+
+      <div class="container" data-aos="fade" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>2nd floor SBC 3, Ashtamudi Tower<br>Technopark, Kerala</p>
+              </div>
+            </div>
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+91 474 276 6422<br>+91 88486 57696</p>
+              </div>
+            </div>
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>info@aadiltech.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h3 class="sitename">AADILTECH</h3>
+          <p>Innovative IT solutions provider helping businesses transform digitally since 2010.</p>
+          <div class="social-links d-flex mt-3">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#career">Career</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Software Development</a></li>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Mobile Apps</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Bulk Messaging</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h4>Contact Info</h4>
+          <p>
+            2nd floor SBC 3, Ashtamudi Tower<br>
+            Technopark, Kerala<br><br>
+            <strong>Phone:</strong> +91 474 276 6422<br>
+            <strong>Email:</strong> info@aadiltech.com<br>
+          </p>
+        </div>
+      </div>
+
+      <div class="container mt-4">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">AadilTech Solutions Pvt Ltd @ 2024 || All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Initialize Owl Carousel
+    $(document).ready(function(){
+      $(".client-carousel").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 2
+          },
+          600: {
+            items: 3
+          },
+          1000: {
+            items: 5
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
